@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f1e9">
+  <meta name="description" content="An event-driven n8n process that validates incoming leads, checks HubSpot for duplicates, creates or updates contacts, sends a confirmation, and returns…">
+  <meta name="keywords" content="workflow automation, automation expert, n8n, HubSpot, CRM automation">
+  <link rel="canonical" href="https://khalisia.github.io/larryluvindiworkflows/project-04-lead-management.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Larry Luvindi | Automation Portfolio">
+  <meta property="og:title" content="Lead Management Automation — Larry Luvindi">
+  <meta property="og:description" content="An event-driven n8n process that validates incoming leads, checks HubSpot for duplicates, creates or updates contacts, sends a confirmation, and returns…">
+  <meta property="og:url" content="https://khalisia.github.io/larryluvindiworkflows/project-04-lead-management.html">
+  <meta property="og:image" content="https://files.manuscdn.com/user_upload_by_module/session_file/310519664052309716/DxtvYYjzxyjpauMM.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Lead Management Automation — Larry Luvindi">
+  <meta name="twitter:description" content="An event-driven n8n process that validates incoming leads, checks HubSpot for duplicates, creates or updates contacts, sends a confirmation, and returns…">
+  <meta name="twitter:image" content="https://files.manuscdn.com/user_upload_by_module/session_file/310519664052309716/DxtvYYjzxyjpauMM.png">
+  <title>Lead Management Automation — Larry Luvindi</title>
+  <link rel="icon" href="/larryluvindiworkflows/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/larryluvindiworkflows/styles.css">
+  <script src="/larryluvindiworkflows/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell site-shell--detail">
+    <header class="site-header">
+    <a class="brand" href="/larryluvindiworkflows/" aria-label="Larry Luvindi — home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>LARRY <b>LUVINDI</b></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav"><span class="menu-icon" aria-hidden="true"></span><span class="sr-only">Open navigation</span></button>
+    <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+      <a href="/larryluvindiworkflows/#work" aria-current="page">Selected work <span>05</span></a>
+      <a href="/larryluvindiworkflows/#about">About</a>
+      <a class="nav-contact" href="/larryluvindiworkflows/#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+    <main id="main">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/larryluvindiworkflows/">Home</a><span aria-hidden="true">/</span><a href="/larryluvindiworkflows/#work">Selected work</a><span aria-hidden="true">/</span><span aria-current="page">Lead Management Automation</span></nav>
+      <section class="detail-hero section-wrap"><div class="detail-hero-main"><p class="eyebrow"><span class="status-dot"></span> CASE STUDY / 04 · CRM AUTOMATION</p><h1>Lead Management Automation</h1><p class="detail-intro">An event-driven n8n process that validates incoming leads, checks HubSpot for duplicates, creates or updates contacts, sends a confirmation, and returns structured JSON.</p><div class="tag-row tag-row--large"><span class="tag">n8n</span><span class="tag">HubSpot CRM API</span><span class="tag">REST APIs</span><span class="tag">Webhooks</span><span class="tag">JSON</span><span class="tag">Email automation</span></div><div class="detail-actions"><a class="button button--solid" href="#demo">Watch the demo <span aria-hidden="true">↓</span></a></div></div><aside class="detail-hero-note"><span class="hero-note-label">THE BUILD IN BRIEF</span><div class="brief-row"><span>Focus</span><strong>CRM automation</strong></div><div class="brief-row"><span>Stack</span><strong>n8n · HubSpot CRM API · REST APIs</strong></div><div class="brief-row"><span>Project</span><strong>04 / 05</strong></div><div class="brief-arrow" aria-hidden="true">↘</div></aside></section>
+
+      <section class="detail-section problem-section"><div class="detail-section-head"><p class="eyebrow">01 / CONTEXT</p><h2>The challenge<br><em>to solve.</em></h2></div><div class="prose"><p>Inbound leads arrive from websites, landing pages, and other forms. Manual processing creates delays and data-quality risks: third-party form submissions were handled manually, CRM records were entered by hand, follow-ups were inconsistent, and duplicate contacts accumulated in HubSpot.</p></div></section>
+
+      <section class="detail-section workflow-section"><div class="detail-section-head"><p class="eyebrow">02 / AUTOMATION LOGIC</p><h2>How the flow<br><em>works.</em></h2><p>The steps are sequenced to move information forward deliberately.</p></div><div><ol class="step-list"><li><span class="step-number">01</span><div><h3>Receive lead data</h3><p>An n8n webhook accepts incoming lead information in real time from an external source.</p></div></li><li><span class="step-number">02</span><div><h3>Validate required fields</h3><p>The workflow checks required data before any CRM write. Incomplete submissions fail fast with a clear error message.</p></div></li><li><span class="step-number">03</span><div><h3>Search for an existing contact</h3><p>A HubSpot Contacts Search API request checks for a contact by email before any record is written.</p></div></li><li><span class="step-number">04</span><div><h3>Create or update</h3><p>An If node branches on the search result. Existing contacts are updated; new contacts are created.</p></div></li><li><span class="step-number">05</span><div><h3>Send confirmation</h3><p>An automated confirmation email is sent to the lead.</p></div></li><li><span class="step-number">06</span><div><h3>Return the result</h3><p>The workflow sends a structured JSON API response to the calling application, indicating what happened.</p></div></li></ol></div></section>
+
+      <section class="detail-section highlights-section"><div class="detail-section-head"><p class="eyebrow">03 / BUILD NOTES</p><h2>Details that<br><em>matter in production.</em></h2></div><div class="highlight-grid"><article class="highlight-card"><span class="step-number">01</span><h3>Scoped authentication</h3><p>HubSpot Private App Access Token authentication is used instead of a legacy API key. Write access is scoped to contacts.</p></article><article class="highlight-card"><span class="step-number">02</span><h3>Deduplication first</h3><p>The workflow checks for a contact before creation and branches on actual API response data.</p></article><article class="highlight-card"><span class="step-number">03</span><h3>System integration</h3><p>Structured JSON responses support communication between the workflow and its calling application.</p></article></div><section class="debug-callout"><p class="eyebrow">FIELD NOTE</p><h3>Debugging note</h3><p>During development, the HubSpot Search API rejected requests even though authentication was configured correctly. The cause was a malformed request body. This highlighted the importance of checking API documentation and debugging requests systematically.</p></section></section>
+
+      <section class="outcome-section"><div><p class="eyebrow">04 / OUTCOME</p><h2>What changed<br><em>in the process.</em></h2></div><div><ul class="outcome-list"><li><span class="check-mark" aria-hidden="true">✓</span><span>Removes manual CRM entry from the intake process and checks for existing contacts before creating records.</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>Returns a structured response for each lead to the calling application.</span></li><li><span class="check-mark" aria-hidden="true">✓</span><span>Provides a reusable pattern for businesses receiving leads from websites, landing pages, or third-party applications.</span></li></ul></div></section>
+      
+      <section class="detail-section demo-section" id="demo"><div class="detail-section-head"><p class="eyebrow">WALKTHROUGH / VIDEO</p><h2>See it <em>in action.</em></h2><p>A short demonstration of the project workflow.</p></div><div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/xCpHSFj0yEs" title="Lead Management Automation — YouTube demo" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="demo-link"><a class="text-link" href="https://www.youtube.com/watch?v=xCpHSFj0yEs" target="_blank" rel="noopener noreferrer">Watch on YouTube <span aria-hidden="true">↗</span></a></div></section>
+      <section class="detail-section docs-section"><div class="detail-section-head"><p class="eyebrow">HANDOFF-READY NOTES</p><h2>Designed to be<br><em>maintained.</em></h2></div><div class="docs-grid"><article class="doc-card"><span class="step-number">01</span><h3>API endpoint reference</h3><p>Records the HubSpot Contacts Search endpoint’s method, URL, authentication type, request body structure, and the total response field used for branching.</p></article><article class="doc-card"><span class="step-number">02</span><h3>Conditional logic</h3><p>Documents the rule: if total &gt; 0, update the contact by ID; otherwise, create a contact. It also identifies edge cases such as exact copies, malformed email addresses, and API errors.</p></article><article class="doc-card"><span class="step-number">03</span><h3>Maintainer note</h3><p>Records the Search API request-body details to support troubleshooting.</p></article></div></section>
+      <section class="resources-section"><div class="resources-heading"><p class="eyebrow">CONTINUE EXPLORING</p><h2>Project <em>links.</em></h2></div><p class="resource-note">This case study includes its video demonstration above.</p></section>
+      <nav class="project-pagination" aria-label="Other project case studies"><a href="/larryluvindiworkflows/project-03-customer-onboarding.html"><span>← PREVIOUS CASE</span><strong>Automated Customer Onboarding System</strong></a><a href="/larryluvindiworkflows/project-05-lead-scoring-deal-creation.html"><span>NEXT CASE →</span><strong>Lead Scoring &amp; Deal Creation Automation</strong></a></nav>
+    </main>
+  <footer class="site-footer"><a class="brand brand--footer" href="/larryluvindiworkflows/" aria-label="Back to home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>LARRY <b>LUVINDI</b></span></a><span>Built around thoughtful automation.</span><a href="mailto:larryluvindi.va@gmail.com">larryluvindi.va@gmail.com</a><span>© <span data-year>2026</span></span></footer>
+  </div>
+</body>
+</html>
